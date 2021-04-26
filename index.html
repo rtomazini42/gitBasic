@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="utf-8">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <title>Git Hub Guia Rápido</title>
+    <link rel="icon" href="https://www.alura.com.br/assets/api/cursos/git-github-controle-de-versao.svg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+    <div class="banner">
+
+      <h1>GitHub Guia Rápido</h1>
+      <img src="images/ghlogo.png"></img>
+    </div>
+
+    <div class="conteudo">
+      <h1>Instalação e criação de Git</h1>
+      <p>Acesse o link:</p>
+      <a href="https://git-scm.com/downloads">Download</a>
+      <p>Siga as instruções e instale o Git padrão.</p>
+      <p>Caso esteja usando Linux, antes de tentar instalar verifique no console com o comando abaixo se você já não está com git instalado.</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>$ git --version</p>
+      </div>
+      <p></p>
+      <p></p>
+      <p>Caso precise configurar pela primeira vez o User e email para as alterações, use os comandos abaixo:</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>git config --local user.name "Seu nome aqui"</p>
+        <p>git config --local user.email "seu@email.aqui"</p>
+      </div>
+      <p></p>
+      <p>Após a instalação abra o "bash", no Windows seu icone é este:</p>
+      <img src="images/exemplo1.png"></img>
+      <p></p>
+      <p>Você pode também abrir dentro de uma pasta durante o explorer, basta clicar com o botão direito e selecionar "Git Bash Here":</p>
+      <img src="images/exemplo2.png"></img>
+      <p>Para iniciar um repositório, usamos o comando abaixo que retornará a última linha, mostrando o inicio do repositório:</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>$ git --init</p>
+        <p></p>
+        <p>Initialized empty Git repository in C:/Users/Usuario/Documents/programando/Git/.git/</p>
+      </div>
+
+      <p></p>
+      <h1>Monitorando os arquivos</h1>
+      <p>Após iniciar o repositório, se usarmos o comando</p>
+      <div class="codigo">
+        <p>$ git status</p>
+      </div>
+      <p>Teremos uma lista de "Untracked files", que são os arquivos que não estão sendo monitorados pelo git.</p>
+      <p>Então, para adicionar os mesmos em nosso Git, temos dois comandos, o primeiro adiciona apenas o arquivo especificado</p>
+      <div class="codigo">
+        <p>$ git add index.html</p>
+      </div>
+      <p>Este segundo adiciona todos os arquivos da pata</p>
+      <div class="codigo">
+        <p>$ git add .</p>
+      </div>
+      <p></p>
+      <h1>Commit - Salvando alterações</h1>
+      <p>Para fazer o Commit e salvar suas alterações, usamos o comando abaixo:</p>
+      <div class="codigo">
+        <p>$ git commit -m "Mensagem descritiva de alterações"</p>
+      </div>
+      <p> O "-m" é uma indicação da mensagem que está entre aspas, que será a mensagem da alteração. Uma boa prática é que ela seja descritiva e pequena, não uma documentação mas apenas uma mensagem do que foi alterado</p>
+      <p>That is the song</p>
+    </div>
+  </body>
+</html>

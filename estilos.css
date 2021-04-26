@@ -1,9 +1,9 @@
 body{
-  background: #02283d;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/cristian-palmer-banner.jpg);
-  background-size: cover;
+  background: #001524;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(images/cristian-palmer-banner.jpg);
+  background-size:contain;
   background-repeat:no-repeat;
-  background-position: center;
+  background-position:top;
   background-attachment: fixed, scroll;
   font-family: 'Lato', sans-serif;
 

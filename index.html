@@ -17,8 +17,9 @@
 
     <div class="conteudo">
 
-      <!-- Área reservada para funcionamento desses botões -->
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> <!-- preciso para eles funcionarem -->
+      <!-- Área reservada para funcionamento desses botões
+        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>--> <!-- preciso para eles funcionarem -->
+        <script src="jquery.js"></script>
         <button class="btn js-dia">Claro</button>
         <button class="btn js-noite">Escuro</button>
 
@@ -139,8 +140,22 @@
       <div class = "codigo">
         <p>$ git pull localRepositorio master</p></p>
       </div>
-
-
+      <p></p>
+      <p></p>
+      <h1>GitHub</h1>
+      <p>Github é usado para controle e versionamento remotamente, esse é o serviço que iremos usar. Para criar um repositório você precisa de uma conta. Com uma conta você pode clicar no seguinte botão:</p>
+      <img src="images/exemplo4.png"></img>
+      <p>Dessa forma será criado um novo repositório no GitHub, por enquanto configuremos para ele estar vazio</p>
+      <img src="images/remoteAdd.png"></img>
+      <p>Em destaque temos o "git remote add origin https://github.com/rtomazini42/gitBasic.git", este comando é para sincronizarmos como vimos antes</p>
+      <p>Logo em seguida podemos tentar o "git push origin main" para mandar o que trabalhamos o repositório "origin" que adicionamos antes.</p>
+      <p>Para que tudo ocorra bem, tente o código abaixo</p>
+      <div class="codigo">
+        <p>$ git remote add origin https://github.com/rtomazini42/gitBasic.git</p>
+        <p>$ git branch -M main</p>
+        <p>$ git push -u origin main</p>
+      </div>
+      <p>Devido a novas atualizações há possibilidade de ao invés de pedirem nossas credenciais abrir uma janela pedindo autorização via navegador, basta clicar e logar no navegador para começar a fazer o push :) </p>
 
   </body>
 </html>

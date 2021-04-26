@@ -88,10 +88,38 @@
       </div>
       <p> O "-m" é uma indicação da mensagem que está entre aspas, que será a mensagem da alteração. Uma boa prática é que ela seja descritiva e pequena, não uma documentação mas apenas uma mensagem do que foi alterado</p>
       <p></p>
-      <h1>Visualiazando o histórico de alterações</h1>
+      <h1>Visualizando o histórico de alterações</h1>
       <p>Para ver o histórico de alterações, fazemos com o seguinte comando:</p>
       <div class="codigo">
         <p>$ git log</p>
-    </div>
+      </div>
+      <p>Esse comando retornará nossas alterações, quem fez,em qual horário, hash,email e mensagem deixada.</p>
+      <p>A imagem abaixo mostra ass alterações deste site:</p>
+      <img src="images/exemplo3.png">
+      <p>Além disso, temos outras maneiras de acessar os históricos, incluindo a visualização de alterações, abaixo alguns exemplos de comandos:</p>
+      <div class="codigo">
+        <p>$ git log --oneline </p>
+        <p id = "comentario">->Exibe as alterações em uma linha resumida </p>
+        <p>$ git log -p </p>
+        <p id = "comentario">->Exibe as alterações detalhadas com as linhas que foram adicionadas</p>
+      </div>
+      <a href="https://devhints.io/git-log">Clique aqui para mais filtros e formas de exibir os logs</a>
+      <p></p>
+      <h1>Ignorando arquivos</h1>
+      <p>As vezes queremos que algo não esteja no projeto, seja uma configuração de IDE seja um arquivo de credenciais com dados sensíveis,
+      <p>Fazemos então uma lista de arquivos que não podem estar sincronizados ao Git, isso é feito com um arquivo ".gitignore", onde lá dentro ficará os arquivos a serem ignorados.</p>
+      <div class="codigo">
+        <p id = "titulo">.gitignore</p>
+        <p>ideConfig.txt</p>
+        <p>keys.db</p>
+        <p>exemplo.jpg</p>
+        <p>FotosDaFestaFicaramOtimas.exe</p>
+      </div>
+      <p>Precisamos adicionar o gitignore também ao git para que ele possa usa-lo, use o comando :</p>
+      <div class="codigo">
+        <p>git add .gitignore</p>
+        <p>git commit -m "Adicionando .gitignore"</p>
+      </div>
+
   </body>
 </html>

@@ -120,6 +120,27 @@
         <p>git add .gitignore</p>
         <p>git commit -m "Adicionando .gitignore"</p>
       </div>
+      <p></p>
+      <h1>Repositório remoto</h1>
+      <p>Para um repositório remoto, precisamos criar o chamado "repositório puro", ele vai conter apenas as alterações dos arquivos e não cópias dos mesmos. Para adicionar um repositório a nossa lista de repositórios acessíveis precisamos executar o seguinte comando:</p>
+      <div class="codigo">
+        <p>$ git remote add nomeRepositorio localRepositorio</p>
+        <p id="comentario">O localRepositorio pode ser uma URL, um diretorio ou um servidor</p>
+      </div>
+      <p>Quando precisamos pela primeira vez iniciar um trabalho pela primeira vez a partir de determinado repositório nós usamos o comando de clonagem:</p>
+      <div class = "codigo">
+        <p>$ git clone localRepositorio</p>
+      </div>
+      <p>Após algumas alterações e Commits eu preciso "enviar para o repositório" minhas alterações. Para fazer isso eu uso o seguinte comando:</p>
+      <div class = "codigo">
+        <p>$ git push localRepositorio master</p>
+      </div>
+      <p>Agora alguma pessoa fez uma modificação de alguma coisa, para sintonizar as alterações precisamos do comando:</p>
+      <div class = "codigo">
+        <p>$ git pull localRepositorio master</p></p>
+      </div>
+
+
 
   </body>
 </html>

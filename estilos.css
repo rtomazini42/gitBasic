@@ -45,7 +45,7 @@ body{
 }
 
 .js-noite{
-  background-color: darkblue;
+  background-color: #977dc6;
   color: white;
 }
 .js-dia{
@@ -72,7 +72,7 @@ body{
 }
 
 .conteudo a{
-  color: darkblue;
+  color: #977dc6;
   font-weight: 600;
   /**padding: 5px;**/
   margin-left: 15px;
@@ -147,6 +147,6 @@ body{
 }
 
 .night h1{
-    background-color: darkblue;
+    background-color: #977dc6;
     color: #dedede;
 }

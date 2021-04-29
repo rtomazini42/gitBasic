@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="utf-8">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <title>Git e GitHub Guia Rápido</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+    <div class="banner">
+
+      <h1>Git e GitHub Guia Rápido</h1>
+      <div class="logosc">
+        <img src="images/ghlogo.png">
+        <img src="images/ghlogo2.png">
+      </div>
+    </div>
+
+    <div class="conteudo">
+
+      <!-- Área reservada para funcionamento desses botões
+        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>  preciso para eles funcionarem -->
+        <script src="jquery.js"></script>
+        <button class="btn js-dia">☀</button>
+        <button class="btn js-noite">☀</button>
+
+      <script>
+      $(".conteudo").addClass('night');
+      $(".conteudo h1").addClass('night h1')
+
+
+        $('.js-noite').click(function(){
+          $(".js-noite").css("visibility", "hidden")
+          $(".js-dia").css("visibility", "visible")
+          $(".conteudo").addClass('night');
+          $(".conteudo h1").addClass('night h1');
+
+        });
+        $('.js-dia').click(function(){
+          $(".js-noite").css("visibility", "visible")
+          $(".js-dia").css("visibility", "hidden");
+          $(".conteudo").removeClass('night');
+          $(".conteudo h1").removeClass('night h1');
+        });
+      </script>
+      <!-- Fim da área -->
+
+      <h1>Instalação e criação de Git</h1>
+      <p>Acesse o link:</p>
+      <a href="https://git-scm.com/downloads">Download</a>
+      <p>Siga as instruções e instale o Git padrão.</p>
+      <p>Caso esteja usando Linux, antes de tentar instalar verifique no console com o comando abaixo se você já não está com git instalado.</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>$ git --version</p>
+      </div>
+      <p></p>
+      <p></p>
+      <p>Caso precise configurar pela primeira vez o User e email para as alterações, use os comandos abaixo:</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>git config --local user.name "Seu nome aqui"</p>
+        <p>git config --local user.email "seu@email.aqui"</p>
+      </div>
+      <p></p>
+      <p>Após a instalação abra o "bash", no Windows seu icone é este:</p>
+      <img src="images/exemplo1.png"></img>
+      <p></p>
+      <p>Você pode também abrir dentro de uma pasta durante o explorer, basta clicar com o botão direito e selecionar "Git Bash Here":</p>
+      <img src="images/exemplo2.png"></img>
+      <p>Para iniciar um repositório, usamos o comando abaixo que retornará a última linha, mostrando o inicio do repositório:</p>
+      <div class="codigo">
+        <p id = "primeira">User@NotebookName</p>
+        <p>$ git --init</p>
+        <p></p>
+        <p>Initialized empty Git repository in C:/Users/Usuario/Documents/programando/Git/.git/</p>
+      </div>
+
+      <p></p>
+      <h1>Monitorando os arquivos</h1>
+      <p>Após iniciar o repositório, se usarmos o comando</p>
+      <div class="codigo">
+        <p>$ git status</p>
+      </div>
+      <p>Teremos uma lista de "Untracked files", que são os arquivos que não estão sendo monitorados pelo git.</p>
+      <p>Então, para adicionar os mesmos em nosso Git, temos dois comandos, o primeiro adiciona apenas o arquivo especificado</p>
+      <div class="codigo">
+        <p>$ git add index.html</p>
+      </div>
+      <p>Este segundo adiciona todos os arquivos da pata</p>
+      <div class="codigo">
+        <p>$ git add .</p>
+      </div>
+      <p></p>
+      <h1>Commit - Salvando alterações</h1>
+      <p>Para fazer o Commit e salvar suas alterações, usamos o comando abaixo:</p>
+      <div class="codigo">
+        <p>$ git commit -m "Mensagem descritiva de alterações"</p>
+      </div>
+      <p> O "-m" é uma indicação da mensagem que está entre aspas, que será a mensagem da alteração. Uma boa prática é que ela seja descritiva e pequena, não uma documentação mas apenas uma mensagem do que foi alterado</p>
+      <p></p>
+      <h1>Visualizando o histórico de alterações</h1>
+      <p>Para ver o histórico de alterações, fazemos com o seguinte comando:</p>
+      <div class="codigo">
+        <p>$ git log</p>
+      </div>
+      <p>Esse comando retornará nossas alterações, quem fez,em qual horário, hash,email e mensagem deixada.</p>
+      <p>A imagem abaixo mostra ass alterações deste site:</p>
+      <img src="images/exemplo3.png">
+      <p>Além disso, temos outras maneiras de acessar os históricos, incluindo a visualização de alterações, abaixo alguns exemplos de comandos:</p>
+      <div class="codigo">
+        <p>$ git log --oneline </p>
+        <p id = "comentario">->Exibe as alterações em uma linha resumida </p>
+        <p>$ git log -p </p>
+        <p id = "comentario">->Exibe as alterações detalhadas com as linhas que foram adicionadas</p>
+      </div>
+      <a href="https://devhints.io/git-log">Clique aqui para mais filtros e formas de exibir os logs</a>
+      <p></p>
+      <h1>Ignorando arquivos</h1>
+      <p>As vezes queremos que algo não esteja no projeto, seja uma configuração de IDE seja um arquivo de credenciais com dados sensíveis,
+      <p>Fazemos então uma lista de arquivos que não podem estar sincronizados ao Git, isso é feito com um arquivo ".gitignore", onde lá dentro ficará os arquivos a serem ignorados.</p>
+      <div class="codigo">
+        <p id = "titulo">.gitignore</p>
+        <p>ideConfig.txt</p>
+        <p>keys.db</p>
+        <p>exemplo.jpg</p>
+        <p>FotosDaFestaFicaramOtimas.exe</p>
+      </div>
+      <p>Precisamos adicionar o gitignore também ao git para que ele possa usa-lo, use o comando :</p>
+      <div class="codigo">
+        <p>git add .gitignore</p>
+        <p>git commit -m "Adicionando .gitignore"</p>
+      </div>
+      <p></p>
+      <h1>Repositório remoto</h1>
+      <p>Para um repositório remoto, precisamos criar o chamado "repositório puro", ele vai conter apenas as alterações dos arquivos e não cópias dos mesmos. Para adicionar um repositório a nossa lista de repositórios acessíveis precisamos executar o seguinte comando:</p>
+      <div class="codigo">
+        <p>$ git remote add nomeRepositorio localRepositorio</p>
+        <p id="comentario">O localRepositorio pode ser uma URL, um diretorio ou um servidor</p>
+      </div>
+      <p>Quando precisamos pela primeira vez iniciar um trabalho pela primeira vez a partir de determinado repositório nós usamos o comando de clonagem:</p>
+      <div class = "codigo">
+        <p>$ git clone localRepositorio</p>
+      </div>
+      <p>Após algumas alterações e Commits eu preciso "enviar para o repositório" minhas alterações. Para fazer isso eu uso o seguinte comando:</p>
+      <div class = "codigo">
+        <p>$ git push localRepositorio master</p>
+      </div>
+      <p>Agora alguma pessoa fez uma modificação de alguma coisa, para sintonizar as alterações precisamos do comando:</p>
+      <div class = "codigo">
+        <p>$ git pull localRepositorio master</p></p>
+      </div>
+      <p></p>
+      <p></p>
+      <h1>GitHub</h1>
+      <p>Github é usado para controle e versionamento remotamente, esse é o serviço que iremos usar. Para criar um repositório você precisa de uma conta. Com uma conta você pode clicar no seguinte botão:</p>
+      <img src="images/exemplo4.png"></img>
+      <p>Dessa forma será criado um novo repositório no GitHub, por enquanto configuremos para ele estar vazio</p>
+      <img src="images/remoteAdd.png"></img>
+      <p>Em destaque temos o "git remote add origin https://github.com/rtomazini42/gitBasic.git", este comando é para sincronizarmos como vimos antes</p>
+      <p>Logo em seguida podemos tentar o "git push origin main" para mandar o que trabalhamos o repositório "origin" que adicionamos antes.</p>
+      <p>Para que tudo ocorra bem, tente o código abaixo</p>
+      <div class="codigo">
+        <p>$ git remote add origin https://github.com/rtomazini42/gitBasic.git</p>
+        <p>$ git Branch -M main</p>
+        <p>$ git push -u origin main</p>
+      </div>
+      <p>Devido a novas atualizações há possibilidade de ao invés de pedirem nossas credenciais abrir uma janela pedindo autorização via navegador, basta clicar e logar no navegador para começar a fazer o push :) </p>
+      <p></p>
+      <p></p>
+      <h1>Branchs</h1>
+      <p>Um Branch separa uma versão para você trabalhar no projeto sem interferir no código "final" nem no trabalho de outras pessoas. Os Branchs ramificam o código, criamos uma "nova linha".</p>
+      <p>Para fazer isso no git-Bash usamos:</p>
+      <div class="codigo">
+        <p>$ git vranch dev1</p>
+      </div>
+      <p>Assim criamos uma nova Branch</p>
+      <p>Porém, ainda estamos na outra linha de Desenvolvimento, para trocar precisamos do seguinte comando:</p>
+      <div class="codigo">
+          <p>$ git checkout dev1</p>
+      </div>
+      <p>Trocando finalmente para outra Branch, como se tivessemos outra linha no Git:</p>
+      <img src="https://miro.medium.com/max/1600/1*Gt90_YptJvwLYeVo1V-c3A.jpeg"></img>
+      <p>Podemos também criar uma Branch e trocar diretamente para ela:</p>
+      <div class="codigo">
+          <p>$ git checkout -b dev2</p>
+      </div>
+      <p></p>
+      <h1>Juntando Branches</h1>
+      <p>Para unir duas "linhas" de desenvolvimento nós usamos o "merge"</p>
+      <div class="codigo">
+          <p>$ git checkout master</p>
+          <p>$ git merge dev2</p>
+      </div>
+      <p>Iremos ter de commitar um comitt de merge. Pra isso abrirá um editor chamado "VIM" no bash. Para sair use :x</p>
+      <p></p>
+      <P>Agora, suponha-mos que a dev2 fez um trabalho tão bom que queremos colocar tudo na master se baseando a partir da Branch dela, existe um comando para:</p>
+      <div class="codigo">
+          <p>$ git checkout main</p>
+          <p>$ git rebase dev2</p>
+      </div>
+      <p>Dessa forma a Branch da dev2 agora é a main!</p>
+      <p></p>
+      <h1>Conflito de merge</h1>
+      <p>Suponha-mos que o dev1 fez a seguinte alteração:</p>
+      <div class="codigo">
+          <p>22 | listaCompras = ["abacate", "banana", "melancia"]</p>
+          <p>23 | print(listaCompras)</p>
+      </div>
+      <p>Porém, a dev2 também mexeu no mesmo trecho:</p>
+      <div class="codigo">
+          <p>22 | listaCompras = ["mamão", "banana", "melancia"]</p>
+          <p>23 | print(listaCompras)</p>
+      </div>
+      <p>Ao tentar realizar o merge, temos um erro</p>
+      <div class="codigo">
+          <p>$git merge dev2</p>
+          <p>Automatic merge failed; fix conflicts and then commit result</p>
+      </div>
+      <p>Alguns editores irão destacar o conflito mostrando ambas as linhas, outros indicarão ambos os conteúdos. Para corrigir o conflito basta escolher qual você quer manter e excluir o outro.</p>
+      <p>Após isso, fazemos o git add e então o git commit para fazer o commit de merge. ":X" para salvar e sair</p>
+      <p>Mas quando a dev2 resolveu esse conflito escolhendo a versão dela, o dev1 trabalhava em outra parte do código, ao tentar enviar ele se depara com o seguinte erro:</p>
+      <div class="codigo">
+          <p>$git merge main</p>
+          <p>Automatic merge failed; fix conflicts and then commit result</p>
+      </div>
+      <p>Então precisamos puxar o código alterado da dev2, para evitar isso acontecer com frequência precisamos sempre fazer o pull antes de começar a trabalhar:</p>
+      <div class="codigo">
+          <p>$git pull main</p>
+          <p>$git push dev main</p>
+      </div>
+      <h1>Defazendo alterações:</h1>
+      <p>Az vezes precisamos "voltar", dar o ctrl+z para conseguir continuar. Como fazer isso no git?</p>
+      <p>Para desfazer um commit enviado primeiro precisamos pegar o hash dele, fazemos isso com:</p>
+      <div class="codigo">
+          <p>$git log</p>
+          <p id="comentario">Onde o comando responderá com varios logs:</p>
+          <p id="primeira">commit n40t3mn4d44scr1t0aqu1okok</p>
+          <p>Author: Álvaro de Campos - alvarocamposdev@poeta.com</p>
+          <p>   Adicionando  o masoquismo através de maquinismos!<p>
+          <p id="primeira">commit a1t3r4c40Bug4d4S0c0rr1nh0</p>
+          <p>Author: Tenan Romazini - temnogit@anarquistadeSistemas.com</p>
+          <p>  Aplicativo feito no flash adicionado a main, confia!<p>
+          <p id="primeira">commit l3v4nt31asS3fuip3g4r4gu4</p>
+          <p>Author: Carolina Maria de Jesus - carolmaria@poeta.com</p>
+          <p>  Adicionada saída de dados e visualizador<p>
+          <p id="primeira">commit pYthOn1c0f4nt4sySaynoMore</p>
+          <p>Author: Marie Curie - mariecurie@radionico.com</p>
+          <p>  Medidor de radiação adicionado.<p>
+          <p id="primeira">commit S3ndC4t5P1ctur3sP134s3ovo</p>
+          <p>Author: Douglas Adams- douglinhadamassa42@mochileiros.com</p>
+          <p>  Criada maquina de improbabilidade infinita<p>
+        </div>
+      <p>Indentificado o commit que queremos reverter, vamos dar o comando para tirar ele do projeto</p>
+      <p>Vamos usar o "git revert" juntamente com o hash do commit bugado:<p>
+      <div class="codigo">
+        <p>$git revert a1t3r4c40Bug4d4S0c0rr1nh0</p>
+      </div>
+      <br></br>
+      <p>:x para sair do VIM após editar a mensagem</p>
+      <p></p>
+      <p>Podemos também, navegar até um dos estados do projeto dos commmits, usando o checkout:</p>
+      <div class="codigo">
+        <p>$git checkout l3v4nt31asS3fuip3g4r4gu4</p>
+      </div>
+      <p>Todas as alterações feitas aqui não ficarão salvas, a menos que criemos um novo Branch para manter elas</p>
+      <p></p>
+      <h1>Salvando temporariamente</h1>
+      <p>Existe um comando para que possamos salvar algo temporariamente, assim se algo não estiver pronto e quisermos salvar do mesmo jeito vamos usar o seguinte comando:</p>
+      <div class="codigo">
+        <p>$git stash </p>
+      </div>
+      <p>Assim salvamos as alterações sem gerar commit até voltarmos a trabalhar nela. Para voltar a trabalhar nela fazemos o comando:</p>
+      <div class="codigo">
+        <p>$git stash pop</p>
+      </div>
+      <p></p>
+      <h1>Versão</h1>
+      <p>No Git usamos tags, essas tags são pontos onde salvaremos as versões, como checkpoints de videogame</p>
+      <p>Para isso temos os comandos:</p>
+      <div class="codigo">
+        <p>$git tag -a versãoAtualizadissima -m "Versão 'estavél'"</p>
+        <p>$git push origin versãoAtualizadissima</p>
+      </div>
+      <h1>Fim das anotações</h2>
+      <p>Este "caderno" está encerrado por enquanto. Mas pretendo criar mais material do tipo, vou juntar todos em:</p>
+      <a href="index.html">Cadernos</a>
+    </div>
+  </body>
+
+
+  <!--Waves Container-->
+  <div>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,105,148,0.7" />
+  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,105,148,0.5)" />
+  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,105,148,0.3)" />
+  <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+  </g>
+  </svg>
+  </div>
+  <!--Waves end-->
+
+  <div class="content flex">
+    <img src="https://rtomazini42.github.io/images/perfil.png" ></img>
+    <br></br>
+    <a href="https://rtomazini42.github.io/">Criado por Renan Tomazini</a><br></br>
+
+  <a href="https://codepen.io/goodkatz/pen/LYPGxQz">CSS animation from Daniel Österman</p>
+  </div>
+
+</html>

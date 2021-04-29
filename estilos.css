@@ -13,7 +13,6 @@ body{
 
 
 .banner {
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   /*background-color: rgba(255,255,255,0.4);*/
   margin-left: 15%;
@@ -32,25 +31,27 @@ body{
   text-align: center;
   color: white;
   font-weight: bold;
+
 }
 
 .banner img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   filter: invert(100%);
   width: 10%;
   height: 10%;
-  margin 250px;
+  margin: auto;
+  display: block;
 }
 
 .js-noite{
-  background-color: #977dc6;
+  visibility: hidden;
+  background-color: #212121;
   color: white;
 }
 .js-dia{
+  position: absolute;
+  visibility: visible;
   background-color: lightblue;
-  color: white;
+  color: #212121;
 }
 
 .conteudo {

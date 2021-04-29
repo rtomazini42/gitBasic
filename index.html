@@ -4,7 +4,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <title>Git Hub Guia Rápido</title>
-    <link rel="icon" href="https://www.alura.com.br/assets/api/cursos/git-github-controle-de-versao.svg">
+    <link rel="icon" href="images/icon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
   </head>
@@ -24,6 +24,8 @@
         <button class="btn js-noite">Escuro</button>
 
       <script>
+      $(".conteudo").addClass('night');
+      $(".conteudo h1").addClass('night h1')
         $('.js-noite').click(function(){
           $(".conteudo").addClass('night');
           $(".conteudo h1").addClass('night h1');
@@ -152,10 +154,32 @@
       <p>Para que tudo ocorra bem, tente o código abaixo</p>
       <div class="codigo">
         <p>$ git remote add origin https://github.com/rtomazini42/gitBasic.git</p>
-        <p>$ git branch -M main</p>
+        <p>$ git Branch -M main</p>
         <p>$ git push -u origin main</p>
       </div>
       <p>Devido a novas atualizações há possibilidade de ao invés de pedirem nossas credenciais abrir uma janela pedindo autorização via navegador, basta clicar e logar no navegador para começar a fazer o push :) </p>
+      <p></p>
+      <p></p>
+      <h1>Branchs</h1>
+      <p>Um Branch separa uma versão para você trabalhar no projeto sem interferir no código "final" nem no trabalho de outras pessoas. Os Branchs ramificam o código, criamos uma "nova linha".</p>
+      <p>Para fazer isso no git-Bash usamos:</p>
+      <div class="codigo">
+        <p>$ git vranch dev1</p>
+      </div>
+      <p>Assim criamos uma nova Branch</p>
+      <p>Porém, ainda estamos na outra linha de Desenvolvimento, para trocar precisamos do seguinte comando:</p>
+      <div class="codigo">
+          <p>$ git checkout dev1</p>
+      </div>
+      <p>Trocando finalmente para outra Branch, como se tivessemos outra linha no Git:</p>
+      <img src="https://miro.medium.com/max/1600/1*Gt90_YptJvwLYeVo1V-c3A.jpeg"></img>
+      <p>Podemos também criar uma Branch e trocar diretamente para ela:</p>
+      <div class="codigo">
+          <p>$ git checkout -b dev2</p>
+      </div>
+
+
+
     </div>
   </body>
 
